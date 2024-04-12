@@ -6,6 +6,16 @@ def encoder(password):
     return sum
 
 
+def decoder(encodedPassword):
+    decode = ""
+    for digit in encodedPassword:
+       decoded = str((int(digit) - 3) % 10)
+       # undo the encoder
+       decode += decoded
+    return decode
+
+
+
 def main():
     while True:
         print("Menu")
